@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Link } from "react-router-dom";  // ✅ Import Link
+import { Link } from "react-router-dom";  
 import "boxicons/css/boxicons.min.css";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
@@ -42,7 +42,6 @@ const Hero = () => {
         </p>
 
         <div className="flex justify-center lg:justify-start gap-4 mt-10">
-          {/* ✅ Use Link instead of <a href> */}
           <Link
             to="/Services"
             className="border border-[#2a2a2a] py-2 sm:py-3 px-5 rounded-full sm:text-lg text-sm font-semibold tracking-wider transition-all duration-300 hover:bg-[#1a1a1a]"
@@ -59,8 +58,9 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right visual (Spline below text on mobile, right on desktop) */}
-      <div className="mt-10 lg:mt-0 w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px] flex justify-center lg:justify-end items-center relative">
+      {/* Right visual */}
+      <div className="mt-10 lg:mt-0 w-full lg:w-1/2 max-w-full h-[260px] sm:h-[380px] lg:h-[600px] 
+                      flex justify-center lg:justify-end items-center relative overflow-hidden">
         <Suspense
           fallback={
             <img
@@ -72,12 +72,12 @@ const Hero = () => {
         >
           <Spline
             scene="https://prod.spline.design/ybUsFRTEXm6XoH0G/scene.splinecode"
-            className="w-full h-full"
+            className="w-full h-full max-w-full object-contain transform scale-90 sm:scale-95 md:scale-100 transition-transform duration-300"
           />
         </Suspense>
 
-        {/* Mask the bottom line from Spline */}
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-black"></div>
+        {/* Mask the bottom line */}
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-black"></div>
       </div>
     </main>
   );
