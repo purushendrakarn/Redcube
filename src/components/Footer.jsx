@@ -8,6 +8,8 @@ const Footer = () => {
         <a
           href="https://www.instagram.com/redcubeagency"
           className="hover:text-white transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <i className="bx bxl-instagram text-2xl"></i>
         </a>
@@ -15,8 +17,20 @@ const Footer = () => {
         <a
           href="https://www.linkedin.com/company/red-cube-agency"
           className="hover:text-white transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <i className="bx bxl-linkedin text-2xl"></i>
+        </a>
+
+        {/* WhatsApp link */}
+        <a
+          href="https://wa.me/917368970085" // ✅ no "+" sign
+          className="hover:text-white transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="bx bxl-whatsapp text-2xl"></i>
         </a>
       </div>
     </footer>
