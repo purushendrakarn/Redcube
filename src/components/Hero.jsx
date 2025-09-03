@@ -58,9 +58,11 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right visual */}
-      <div className="mt-10 lg:mt-0 w-full lg:w-1/2 max-w-full h-[260px] sm:h-[380px] lg:h-[600px] 
-                      flex justify-center lg:justify-end items-center relative overflow-hidden">
+      {/* Right visual (Spline) */}
+      <div className="mt-10 lg:mt-0 w-full lg:w-1/2 max-w-full 
+                      h-[240px] sm:h-[340px] lg:h-[600px] 
+                      flex justify-center lg:justify-end items-center 
+                      relative overflow-hidden">
         <Suspense
           fallback={
             <img
@@ -70,10 +72,13 @@ const Hero = () => {
             />
           }
         >
-          <Spline
-            scene="https://prod.spline.design/ybUsFRTEXm6XoH0G/scene.splinecode"
-            className="w-full h-full max-w-full object-contain transform scale-90 sm:scale-95 md:scale-100 transition-transform duration-300"
-          />
+          {/* Responsive wrapper for spline */}
+          <div className="w-full max-w-[320px] sm:max-w-[500px] lg:max-w-none h-full flex justify-center items-center">
+            <Spline
+              scene="https://prod.spline.design/ybUsFRTEXm6XoH0G/scene.splinecode"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </Suspense>
 
         {/* Mask the bottom line */}
