@@ -1,7 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig(({ mode }) => ({
-  plugins: [react()],
-  base: mode === "production" ? "/Redcube/" : "/", // ✅
-}));
+export default defineConfig(({ mode }) => {
+  return {
+    plugins: [react()],
+    base: mode === "production"
+      ? (process.env.CUSTOM_DOMAIN ? "/" : "/Redcube/") // ✅ dynamic base
+      : "/",
+  };
+});
